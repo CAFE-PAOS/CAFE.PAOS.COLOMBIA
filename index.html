@@ -9,8 +9,8 @@
   <meta property="og:description" content="Café colombiano de excelencia, con impacto social y compromiso con el productor y el planeta.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://paos.co">
-  <!-- Imagen OG (usamos la del video como poster) -->
-  <meta property="og:image" content="https://drive.google.com/uc?export=download&id=1kshb6HF1MT7M-Yp6fTm8yz0Hw5X30l9L">
+  <!-- Imagen OG usando el video (se mostrará una vista previa) -->
+  <meta property="og:image" content="https://drive.google.com/uc?export=view&id=1kshb6HF1MT7M-Yp6fTm8yz0Hw5X30l9L">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
@@ -443,11 +443,6 @@
       display:block;
       box-shadow:0 30px 80px rgba(0,0,0,.65);
       object-fit:cover;
-    }
-    /* Estilos específicos para el video */
-    .hero-product-img[src$=".mp4"] {
-      min-height: 300px;
-      background: #1A0800;
     }
     .hero-img-frame {
       position:absolute;
@@ -1208,8 +1203,8 @@
   <!-- Navegación -->
   <nav role="navigation" aria-label="Navegación principal">
     <a class="nav-logo" onclick="showPage('home')" href="javascript:void(0)" aria-label="Inicio PAOS">
-      <!-- Logo actualizado con export=download -->
-      <img src="https://drive.google.com/uc?export=download&id=1VLmEiSX_yTeFAZ9n0fnPRGVQy-caeMRq" alt="Logo PAOS Café" class="nav-logo-img">
+      <!-- Logo: export=view -->
+      <img src="https://drive.google.com/uc?export=view&id=1VLmEiSX_yTeFAZ9n0fnPRGVQy-caeMRq" alt="Logo PAOS Café" class="nav-logo-img">
       <div class="nav-logo-txt"><span>PAOS</span><small>Café de Especialidad</small></div>
     </a>
     <div class="nav-tabs">
@@ -1255,9 +1250,9 @@
         </div>
         <div class="hero-img">
           <div class="hero-seal"><div class="seal-in"><div class="seal-n">100%</div><div class="seal-t">Colombiano<br>Puro</div></div></div>
-          <!-- Video con export=download y poster (mismo ID) -->
-          <video class="hero-product-img" autoplay muted loop playsinline poster="https://drive.google.com/uc?export=download&id=1kshb6HF1MT7M-Yp6fTm8yz0Hw5X30l9L">
-            <source src="https://drive.google.com/uc?export=download&id=1kshb6HF1MT7M-Yp6fTm8yz0Hw5X30l9L" type="video/mp4">
+          <!-- Video con formato /preview para reproducción directa -->
+          <video class="hero-product-img" autoplay muted loop playsinline>
+            <source src="https://drive.google.com/file/d/1kshb6HF1MT7M-Yp6fTm8yz0Hw5X30l9L/preview" type="video/mp4">
             Tu navegador no soporta videos.
           </video>
           <div class="hero-img-frame"></div>
@@ -1306,7 +1301,7 @@
       <div class="feat-grid">
         <!-- Santander Natural -->
         <div class="feat-card fi" onclick="showPage('productos')">
-          <div class="feat-img"><img src="https://drive.google.com/uc?export=download&id=1WpddbJpU7iJALrDwa4NX3DQz9uJlcY-H" alt="Santander Natural" loading="lazy"></div>
+          <div class="feat-img"><img src="https://drive.google.com/uc?export=view&id=1WpddbJpU7iJALrDwa4NX3DQz9uJlcY-H" alt="Santander Natural" loading="lazy"></div>
           <div class="feat-body">
             <h3 class="feat-name">Santander Natural</h3>
             <p class="feat-desc">Acidez brillante, notas a chocolate y caramelo. Tueste medio que resalta la altitud y el clima único de la región.</p>
@@ -1315,7 +1310,7 @@
         </div>
         <!-- Santander Lavado -->
         <div class="feat-card fi" style="transition-delay:.12s" onclick="showPage('productos')">
-          <div class="feat-img"><img src="https://drive.google.com/uc?export=download&id=1vLVn3dQBMG7HotrlA06ZHIe2W1aJiiDk" alt="Santander Lavado" loading="lazy"></div>
+          <div class="feat-img"><img src="https://drive.google.com/uc?export=view&id=1vLVn3dQBMG7HotrlA06ZHIe2W1aJiiDk" alt="Santander Lavado" loading="lazy"></div>
           <div class="feat-body">
             <h3 class="feat-name">Santander Lavado</h3>
             <p class="feat-desc">Cosecha limitada, tueste oscuro, cuerpo robusto y notas a frutos secos. Ideal para paladares exigentes.</p>
@@ -1324,7 +1319,7 @@
         </div>
         <!-- Santander Honey -->
         <div class="feat-card fi" style="transition-delay:.24s" onclick="showPage('productos')">
-          <div class="feat-img"><img src="https://drive.google.com/uc?export=download&id=1x2OtNBxB2f3y9VR4b8AUsAjSOWqxyvn2" alt="Santander Honey" loading="lazy"></div>
+          <div class="feat-img"><img src="https://drive.google.com/uc?export=view&id=1x2OtNBxB2f3y9VR4b8AUsAjSOWqxyvn2" alt="Santander Honey" loading="lazy"></div>
           <div class="feat-body">
             <h3 class="feat-name">Santander Honey</h3>
             <p class="feat-desc">Notas cítricas y florales, acidez vibrante y final dulce. Tueste claro que preserva la esencia del grano.</p>
@@ -1458,8 +1453,8 @@
   <footer>
     <div class="footer-grid">
       <div class="f-col">
-        <!-- Logo en footer actualizado -->
-        <img src="https://drive.google.com/uc?export=download&id=1VLmEiSX_yTeFAZ9n0fnPRGVQy-caeMRq" alt="PAOS Café" class="f-brand-logo">
+        <!-- Logo en footer: export=view -->
+        <img src="https://drive.google.com/uc?export=view&id=1VLmEiSX_yTeFAZ9n0fnPRGVQy-caeMRq" alt="PAOS Café" class="f-brand-logo">
         <div class="f-brand-sub">Café de Especialidad</div>
         <p class="f-brand-txt">"Una sola marca. Múltiples orígenes. Un solo propósito."</p>
         <div class="f-socials">
@@ -1493,14 +1488,14 @@
     }
 
     // ================================================================
-    //  PRODUCTOS (datos actualizados con imágenes de Drive)
+    //  PRODUCTOS (datos actualizados con URLs correctas)
     // ================================================================
     const productosData = [
-      { id:1, nombre:'Santander Natural', tipo:'grano', precio:0, descripcion:'Tueste medio, notas a chocolate y caramelo. Acidez brillante.', img:'https://drive.google.com/uc?export=download&id=1WpddbJpU7iJALrDwa4NX3DQz9uJlcY-H', badge:'best', badgeText:'Destacado' },
-      { id:2, nombre:'Santander Lavado', tipo:'grano', precio:0, descripcion:'Tueste oscuro, cuerpo robusto, frutos secos.', img:'https://drive.google.com/uc?export=download&id=1vLVn3dQBMG7HotrlA06ZHIe2W1aJiiDk', badge:'new', badgeText:'Nuevo' },
-      { id:3, nombre:'Santander Honey', tipo:'grano', precio:0, descripcion:'Notas cítricas y florales, acidez vibrante.', img:'https://drive.google.com/uc?export=download&id=1x2OtNBxB2f3y9VR4b8AUsAjSOWqxyvn2', badge:'', badgeText:'' },
-      { id:4, nombre:'Antioquia Lavado', tipo:'grano', precio:0, descripcion:'Perfil limpio y brillante, con notas frutales y un final dulce.', img:'https://drive.google.com/uc?export=download&id=1dsuWN0uf_j2uH4TsKBpP11oD0MSQRuGi', badge:'', badgeText:'' },
-      { id:5, nombre:'Pack Mayoreo Origen', tipo:'mayoreo', precio:0, descripcion:'Paquete de 1kg de café de origen, ideal para negocios.', img:'https://drive.google.com/uc?export=download&id=1QtQj4wO52Lm6f5icY3-5J2EDcXD1g306', badge:'', badgeText:'' },
+      { id:1, nombre:'Santander Natural', tipo:'grano', precio:0, descripcion:'Tueste medio, notas a chocolate y caramelo. Acidez brillante.', img:'https://drive.google.com/uc?export=view&id=1WpddbJpU7iJALrDwa4NX3DQz9uJlcY-H', badge:'best', badgeText:'Destacado' },
+      { id:2, nombre:'Santander Lavado', tipo:'grano', precio:0, descripcion:'Tueste oscuro, cuerpo robusto, frutos secos.', img:'https://drive.google.com/uc?export=view&id=1vLVn3dQBMG7HotrlA06ZHIe2W1aJiiDk', badge:'new', badgeText:'Nuevo' },
+      { id:3, nombre:'Santander Honey', tipo:'grano', precio:0, descripcion:'Notas cítricas y florales, acidez vibrante.', img:'https://drive.google.com/uc?export=view&id=1x2OtNBxB2f3y9VR4b8AUsAjSOWqxyvn2', badge:'', badgeText:'' },
+      { id:4, nombre:'Antioquia Lavado', tipo:'grano', precio:0, descripcion:'Perfil limpio y brillante, con notas frutales y un final dulce.', img:'https://drive.google.com/uc?export=view&id=1dsuWN0uf_j2uH4TsKBpP11oD0MSQRuGi', badge:'', badgeText:'' },
+      { id:5, nombre:'Pack Mayoreo Origen', tipo:'mayoreo', precio:0, descripcion:'Paquete de 1kg de café de origen, ideal para negocios.', img:'https://drive.google.com/uc?export=view&id=1QtQj4wO52Lm6f5icY3-5J2EDcXD1g306', badge:'', badgeText:'' },
     ];
 
     function renderProductos(filtro = 'todos') {
