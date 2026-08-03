@@ -9,12 +9,12 @@
   <meta property="og:description" content="Café colombiano de excelencia, con impacto social y compromiso con el productor y el planeta.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://paos.co">
-  <!-- Imagen OG usando el video (se mostrará una vista previa) -->
-  <meta property="og:image" content="https://drive.google.com/uc?export=view&id=1kshb6HF1MT7M-Yp6fTm8yz0Hw5X30l9L">
+  <!-- Imagen OG usando el video (preview) -->
+  <meta property="og:image" content="https://drive.google.com/thumbnail?id=1kshb6HF1MT7M-Yp6fTm8yz0Hw5X30l9L&sz=w1200">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    /* ===== ESTILOS (sin cambios) ===== */
+    /* ===== ESTILOS (sin cambios relevantes) ===== */
     :root {
       --gold: #C9A84C;
       --gold-l: #E8C96A;
@@ -35,7 +35,6 @@
       overflow-x:hidden;
       cursor:default;
     }
-    /* Anuncio */
     .ann {
       background:var(--gold);
       color:var(--brown);
@@ -61,7 +60,6 @@
       from { transform:translateX(60vw); }
       to { transform:translateX(-100%); }
     }
-    /* Navegación */
     nav {
       position:fixed;
       top:36px;
@@ -242,7 +240,6 @@
     }
     .btn-nav:hover { background:var(--gold-l); }
 
-    /* Páginas */
     .page {
       display:none;
       padding-top:104px;
@@ -255,7 +252,6 @@
       to { opacity:1; transform:translateY(0); }
     }
 
-    /* Botones */
     .btn-gold {
       background:var(--gold);
       color:var(--brown);
@@ -324,7 +320,6 @@
     }
     .btn-outline:hover { border-color:var(--gold); color:var(--gold); }
 
-    /* Utilitarios */
     .sec-tag {
       font-size:9.5px;
       letter-spacing:5px;
@@ -356,7 +351,6 @@
     }
     .fi.vis { opacity:1; transform:translateY(0); }
 
-    /* Hero */
     .hero {
       position:relative;
       min-height:calc(100vh - 104px);
@@ -491,7 +485,6 @@
       text-transform:uppercase;
     }
 
-    /* Feature Cards (Home) */
     .home-feat {
       padding:96px 60px;
       background:linear-gradient(180deg,var(--brown3) 0%,var(--brown) 100%);
@@ -569,7 +562,6 @@
     }
     .btn-sm:hover { background:var(--gold); color:var(--brown); }
 
-    /* Values */
     .vals-strip { padding:78px 60px; background:var(--brown2); }
     .vals-grid {
       max-width:1100px;
@@ -603,7 +595,6 @@
       line-height:1.7;
     }
 
-    /* CTA Band */
     .cta-band {
       background:var(--gold);
       padding:68px 60px;
@@ -624,7 +615,6 @@
       font-style:italic;
     }
 
-    /* Productos */
     .prod-banner {
       background:linear-gradient(135deg,#060100 0%,#1A0800 55%,#0D0400 100%);
       padding:78px 60px 58px;
@@ -790,7 +780,6 @@
     }
     .btn-add:hover { background:#1fa855; transform:scale(1.04); }
 
-    /* Carrito */
     .cart-ov {
       position:fixed;
       inset:0;
@@ -971,7 +960,6 @@
     }
     .btn-wa-checkout:hover { background:#1fa855; }
 
-    /* Toast */
     .toast {
       position:fixed;
       bottom:94px;
@@ -995,7 +983,6 @@
       transform:translateX(-50%) translateY(-7px);
     }
 
-    /* Historia */
     .story-hero {
       min-height:55vh;
       display:flex;
@@ -1090,7 +1077,6 @@
       margin:16px 0 28px;
     }
 
-    /* Footer */
     footer {
       background:#030100;
       border-top:1px solid rgba(201,168,76,.11);
@@ -1177,7 +1163,6 @@
       color:rgba(245,237,216,.2);
     }
 
-    /* Responsive */
     @media(max-width:1024px) {
       nav { padding:0 16px; }
       .nav-tabs { display:none; }
@@ -1202,35 +1187,34 @@
 
   <!-- Navegación -->
   <nav role="navigation" aria-label="Navegación principal">
-    <a class="nav-logo" onclick="showPage('home')" href="javascript:void(0)" aria-label="Inicio PAOS">
-      <!-- Logo: export=view -->
-      <img src="https://drive.google.com/uc?export=view&id=1VLmEiSX_yTeFAZ9n0fnPRGVQy-caeMRq" alt="Logo PAOS Café" class="nav-logo-img">
+    <a class="nav-logo" id="logoHome" href="javascript:void(0)" aria-label="Inicio PAOS">
+      <img src="https://drive.google.com/thumbnail?id=1VLmEiSX_yTeFAZ9n0fnPRGVQy-caeMRq&sz=w200" alt="Logo PAOS Café" class="nav-logo-img">
       <div class="nav-logo-txt"><span>PAOS</span><small>Café de Especialidad</small></div>
     </a>
     <div class="nav-tabs">
-      <button class="nav-tab active" onclick="showPage('home')" aria-current="page">Inicio</button>
+      <button class="nav-tab active" data-page="home">Inicio</button>
       <div class="nav-drop">
-        <button class="nav-tab" onclick="showPage('productos')" aria-haspopup="true">Productos ▾</button>
+        <button class="nav-tab" data-page="productos">Productos ▾</button>
         <div class="drop-menu" role="menu">
-          <div class="drop-item" role="menuitem" onclick="showPage('productos');filterP('todos')">Todos los cafés</div>
-          <div class="drop-item" role="menuitem" onclick="showPage('productos');filterP('molido')">Café molido</div>
-          <div class="drop-item" role="menuitem" onclick="showPage('productos');filterP('grano')">Café en grano</div>
-          <div class="drop-item" role="menuitem" onclick="showPage('productos');filterP('mayoreo')">Paquetes mayoreo</div>
+          <div class="drop-item" data-filter="todos">Todos los cafés</div>
+          <div class="drop-item" data-filter="molido">Café molido</div>
+          <div class="drop-item" data-filter="grano">Café en grano</div>
+          <div class="drop-item" data-filter="mayoreo">Paquetes mayoreo</div>
         </div>
       </div>
-      <button class="nav-tab" onclick="showPage('historia')">Nuestra Historia</button>
-      <button class="nav-tab" onclick="showPage('cafe')">Café &amp; Recetas</button>
-      <button class="nav-tab" onclick="showPage('galeria')">Galería</button>
-      <button class="nav-tab" onclick="showPage('distribuidores')">Distribuidores</button>
-      <button class="nav-tab" onclick="showPage('contacto')">Contacto</button>
+      <button class="nav-tab" data-page="historia">Nuestra Historia</button>
+      <button class="nav-tab" data-page="cafe">Café &amp; Recetas</button>
+      <button class="nav-tab" data-page="galeria">Galería</button>
+      <button class="nav-tab" data-page="distribuidores">Distribuidores</button>
+      <button class="nav-tab" data-page="contacto">Contacto</button>
     </div>
     <div class="nav-right">
       <a href="https://wa.link/n5q62x" target="_blank" class="nav-soc" style="background:rgba(37,211,102,.1);border-color:rgba(37,211,102,.28);color:#25D366;" title="WhatsApp" aria-label="WhatsApp">W</a>
       <a href="https://www.instagram.com/paos.cafe.col?igsh=MTYyZTh0bXRzaTFkMw==" target="_blank" class="nav-soc" style="background:rgba(193,53,132,.1);border-color:rgba(193,53,132,.28);color:#C13584;" title="Instagram" aria-label="Instagram">IG</a>
-      <div class="nav-cart" onclick="toggleCart()" role="button" aria-label="Abrir carrito" tabindex="0">
+      <div class="nav-cart" id="cartToggle" role="button" aria-label="Abrir carrito" tabindex="0">
         🛒<div class="cart-badge" id="cartBadge">0</div>
       </div>
-      <button class="btn-nav" onclick="showPage('distribuidores')">Para tu Negocio</button>
+      <button class="btn-nav" data-page="distribuidores">Para tu Negocio</button>
     </div>
   </nav>
 
@@ -1244,13 +1228,13 @@
           <h1>El Sabor que<br>Colombia <em>Merece</em><br>en tu Taza</h1>
           <p class="hero-sub">Cultivado a más de 1.800 msnm, cosechado a mano y tostado artesanalmente. El auténtico café de Santander — directo del productor a tu taza.</p>
           <div class="hero-ctas">
-            <button class="btn-gold" onclick="showPage('productos')">Explorar Café</button>
+            <button class="btn-gold" data-page="productos">Explorar Café</button>
             <a href="https://wa.link/n5q62x" target="_blank" class="btn-wa">💬 +57 301 8239526</a>
           </div>
         </div>
         <div class="hero-img">
           <div class="hero-seal"><div class="seal-in"><div class="seal-n">100%</div><div class="seal-t">Colombiano<br>Puro</div></div></div>
-          <!-- Video con formato /preview para reproducción directa -->
+          <!-- Video con preview -->
           <video class="hero-product-img" autoplay muted loop playsinline>
             <source src="https://drive.google.com/file/d/1kshb6HF1MT7M-Yp6fTm8yz0Hw5X30l9L/preview" type="video/mp4">
             Tu navegador no soporta videos.
@@ -1260,7 +1244,6 @@
       </div>
     </section>
 
-    <!-- Propósito y modelo B2B -->
     <div style="padding:70px 60px;background:var(--brown2);">
       <div style="max-width:1100px;margin:0 auto;text-align:center;" class="fi">
         <span class="sec-tag">Nuestro Propósito</span>
@@ -1270,13 +1253,12 @@
           Somos una empresa colombiana de café de especialidad que conecta los mejores orígenes de Santander y otras regiones con el mundo. Nuestro modelo B2B está construido sobre alianzas estratégicas, pagando un precio justo a los productores y llevando a cada taza la excelencia y el propósito de transformar vidas.
         </p>
         <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:30px;">
-          <button onclick="showPage('historia')" class="btn-gold">Conoce nuestra historia</button>
+          <button class="btn-gold" data-page="historia">Conoce nuestra historia</button>
           <a href="https://wa.me/573018239526?text=Quiero%20ser%20aliado%20de%20PAOS" target="_blank" class="btn-outline">Sé aliado</a>
         </div>
       </div>
     </div>
 
-    <!-- Valores -->
     <div class="vals-strip">
       <div style="text-align:center;" class="fi">
         <span class="sec-tag">Compromiso</span>
@@ -1291,7 +1273,6 @@
       </div>
     </div>
 
-    <!-- Productos destacados -->
     <div class="home-feat" style="padding-top:70px;">
       <div style="text-align:center;margin-bottom:52px;" class="fi">
         <span class="sec-tag">Selección Destacada</span>
@@ -1299,47 +1280,42 @@
         <div class="gold-bar"></div>
       </div>
       <div class="feat-grid">
-        <!-- Santander Natural -->
-        <div class="feat-card fi" onclick="showPage('productos')">
-          <div class="feat-img"><img src="https://drive.google.com/uc?export=view&id=1WpddbJpU7iJALrDwa4NX3DQz9uJlcY-H" alt="Santander Natural" loading="lazy"></div>
+        <div class="feat-card fi" data-page="productos">
+          <div class="feat-img"><img src="https://drive.google.com/thumbnail?id=1WpddbJpU7iJALrDwa4NX3DQz9uJlcY-H&sz=w800" alt="Santander Natural" loading="lazy"></div>
           <div class="feat-body">
             <h3 class="feat-name">Santander Natural</h3>
             <p class="feat-desc">Acidez brillante, notas a chocolate y caramelo. Tueste medio que resalta la altitud y el clima único de la región.</p>
-            <div class="feat-foot"><span class="feat-price">Consultar</span><button class="btn-sm" onclick="event.stopPropagation();showPage('contacto')">Solicitar</button></div>
+            <div class="feat-foot"><span class="feat-price">Consultar</span><button class="btn-sm" data-page="contacto">Solicitar</button></div>
           </div>
         </div>
-        <!-- Santander Lavado -->
-        <div class="feat-card fi" style="transition-delay:.12s" onclick="showPage('productos')">
-          <div class="feat-img"><img src="https://drive.google.com/uc?export=view&id=1vLVn3dQBMG7HotrlA06ZHIe2W1aJiiDk" alt="Santander Lavado" loading="lazy"></div>
+        <div class="feat-card fi" style="transition-delay:.12s" data-page="productos">
+          <div class="feat-img"><img src="https://drive.google.com/thumbnail?id=1vLVn3dQBMG7HotrlA06ZHIe2W1aJiiDk&sz=w800" alt="Santander Lavado" loading="lazy"></div>
           <div class="feat-body">
             <h3 class="feat-name">Santander Lavado</h3>
             <p class="feat-desc">Cosecha limitada, tueste oscuro, cuerpo robusto y notas a frutos secos. Ideal para paladares exigentes.</p>
-            <div class="feat-foot"><span class="feat-price">Consultar</span><button class="btn-sm" onclick="event.stopPropagation();showPage('contacto')">Solicitar</button></div>
+            <div class="feat-foot"><span class="feat-price">Consultar</span><button class="btn-sm" data-page="contacto">Solicitar</button></div>
           </div>
         </div>
-        <!-- Santander Honey -->
-        <div class="feat-card fi" style="transition-delay:.24s" onclick="showPage('productos')">
-          <div class="feat-img"><img src="https://drive.google.com/uc?export=view&id=1x2OtNBxB2f3y9VR4b8AUsAjSOWqxyvn2" alt="Santander Honey" loading="lazy"></div>
+        <div class="feat-card fi" style="transition-delay:.24s" data-page="productos">
+          <div class="feat-img"><img src="https://drive.google.com/thumbnail?id=1x2OtNBxB2f3y9VR4b8AUsAjSOWqxyvn2&sz=w800" alt="Santander Honey" loading="lazy"></div>
           <div class="feat-body">
             <h3 class="feat-name">Santander Honey</h3>
             <p class="feat-desc">Notas cítricas y florales, acidez vibrante y final dulce. Tueste claro que preserva la esencia del grano.</p>
-            <div class="feat-foot"><span class="feat-price">Consultar</span><button class="btn-sm" onclick="event.stopPropagation();showPage('contacto')">Solicitar</button></div>
+            <div class="feat-foot"><span class="feat-price">Consultar</span><button class="btn-sm" data-page="contacto">Solicitar</button></div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- CTA final -->
     <div class="cta-band">
       <h2>Únete a Nuestro <em>Propósito</em></h2>
       <p>Ya sea que tengas una cafetería, restaurante o compartas nuestra misión, PAOS es tu aliado estratégico.</p>
       <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
         <a href="https://wa.me/573018239526?text=Quiero%20ser%20aliado%20de%20PAOS" target="_blank" class="btn-wa" style="background:var(--brown);color:var(--gold);">💬 Contáctanos</a>
-        <button onclick="showPage('historia')" class="btn-gold" style="background:var(--brown);color:var(--gold);">Conoce más</button>
+        <button class="btn-gold" data-page="historia" style="background:var(--brown);color:var(--gold);">Conoce más</button>
       </div>
     </div>
   </div>
-  <!-- Fin Home -->
 
   <!-- ===== PRODUCTOS ===== -->
   <div id="page-productos" class="page">
@@ -1349,10 +1325,10 @@
       <p style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:rgba(245,237,216,.6);margin-top:10px;">Selecciona tu presentación favorita y disfruta del auténtico sabor de Santander.</p>
     </div>
     <div class="filter-row">
-      <button class="f-tab active" onclick="filterP('todos')">Todos</button>
-      <button class="f-tab" onclick="filterP('molido')">Molido</button>
-      <button class="f-tab" onclick="filterP('grano')">Grano</button>
-      <button class="f-tab" onclick="filterP('mayoreo')">Mayoreo</button>
+      <button class="f-tab active" data-filter="todos">Todos</button>
+      <button class="f-tab" data-filter="molido">Molido</button>
+      <button class="f-tab" data-filter="grano">Grano</button>
+      <button class="f-tab" data-filter="mayoreo">Mayoreo</button>
     </div>
     <div class="prods-section">
       <div class="prods-grid" id="productosGrid"></div>
@@ -1430,11 +1406,11 @@
   <div id="page-contacto" class="page"><div style="padding:80px 60px;text-align:center;"><h2 class="sec-h2 light">Contacto</h2><p style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:rgba(245,237,216,.7);margin-top:20px;">Escríbenos por WhatsApp o redes sociales, estaremos encantados de atenderte.</p><div style="display:flex;gap:14px;justify-content:center;margin-top:30px;"><a href="https://wa.link/n5q62x" target="_blank" class="btn-wa">💬 WhatsApp</a><a href="https://www.instagram.com/paos.cafe.col" target="_blank" class="btn-outline">📷 Instagram</a></div></div></div>
 
   <!-- ===== CARRITO ===== -->
-  <div class="cart-ov" id="cartOverlay" onclick="toggleCart()"></div>
+  <div class="cart-ov" id="cartOverlay"></div>
   <div class="cart-sb" id="cartSidebar" role="dialog" aria-label="Carrito de compras">
     <div class="cart-hd">
       <span class="cart-ttl">🛒 Carrito</span>
-      <button class="cart-cls" onclick="toggleCart()" aria-label="Cerrar carrito">✕</button>
+      <button class="cart-cls" id="cartClose">✕</button>
     </div>
     <div class="cart-items" id="cartItems">
       <div class="cart-empty">Tu carrito está vacío</div>
@@ -1453,8 +1429,7 @@
   <footer>
     <div class="footer-grid">
       <div class="f-col">
-        <!-- Logo en footer: export=view -->
-        <img src="https://drive.google.com/uc?export=view&id=1VLmEiSX_yTeFAZ9n0fnPRGVQy-caeMRq" alt="PAOS Café" class="f-brand-logo">
+        <img src="https://drive.google.com/thumbnail?id=1VLmEiSX_yTeFAZ9n0fnPRGVQy-caeMRq&sz=w200" alt="PAOS Café" class="f-brand-logo">
         <div class="f-brand-sub">Café de Especialidad</div>
         <p class="f-brand-txt">"Una sola marca. Múltiples orígenes. Un solo propósito."</p>
         <div class="f-socials">
@@ -1463,8 +1438,8 @@
           <a href="https://wa.link/n5q62x" target="_blank" class="f-soc" aria-label="WhatsApp">w</a>
         </div>
       </div>
-      <div class="f-col"><h4>Productos</h4><ul><li><a onclick="showPage('productos');filterP('todos')">Todos los cafés</a></li><li><a onclick="showPage('productos');filterP('molido')">Café molido</a></li><li><a onclick="showPage('productos');filterP('grano')">Café en grano</a></li><li><a onclick="showPage('productos');filterP('mayoreo')">Paquetes mayoreo</a></li></ul></div>
-      <div class="f-col"><h4>Información</h4><ul><li><a onclick="showPage('historia')">Nuestra historia</a></li><li><a onclick="showPage('distribuidores')">Distribuidores</a></li><li><a onclick="showPage('contacto')">Contacto</a></li></ul></div>
+      <div class="f-col"><h4>Productos</h4><ul><li><a data-page="productos" data-filter="todos">Todos los cafés</a></li><li><a data-page="productos" data-filter="molido">Café molido</a></li><li><a data-page="productos" data-filter="grano">Café en grano</a></li><li><a data-page="productos" data-filter="mayoreo">Paquetes mayoreo</a></li></ul></div>
+      <div class="f-col"><h4>Información</h4><ul><li><a data-page="historia">Nuestra historia</a></li><li><a data-page="distribuidores">Distribuidores</a></li><li><a data-page="contacto">Contacto</a></li></ul></div>
       <div class="f-col"><h4>Contacto</h4><ul><li><a href="https://wa.link/n5q62x" target="_blank">+57 301 8239526</a></li><li><a href="mailto:info@paos.co">info@paos.co</a></li><li><span style="color:rgba(245,237,216,.4);font-size:12.5px;">Bucaramanga, Santander</span></li></ul></div>
     </div>
     <div class="f-bottom"><p>&copy; 2025 PAOS Café. Todos los derechos reservados.</p><p>Hecho con ❤️ y café en Colombia</p></div>
@@ -1473,29 +1448,59 @@
   <!-- ===== JAVASCRIPT ===== -->
   <script>
     // ================================================================
-    //  NAVEGACIÓN
+    //  NAVEGACIÓN con event listeners (sin inline onclick)
     // ================================================================
     function showPage(pageId) {
       document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
       const target = document.getElementById('page-' + pageId);
       if (target) target.classList.add('active');
       document.querySelectorAll('.nav-tab').forEach(tab => tab.classList.remove('active'));
-      const navBtns = document.querySelectorAll('.nav-tab');
-      navBtns.forEach(btn => {
-        if (btn.textContent.trim().toLowerCase() === pageId) btn.classList.add('active');
+      document.querySelectorAll('.nav-tab').forEach(btn => {
+        if (btn.dataset.page === pageId) btn.classList.add('active');
       });
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
+    // Asignar eventos a todos los elementos con data-page
+    document.addEventListener('click', function(e) {
+      const target = e.target.closest('[data-page]');
+      if (target) {
+        e.preventDefault();
+        const page = target.dataset.page;
+        if (page) showPage(page);
+      }
+      // Filtros en productos (data-filter)
+      const filterTarget = e.target.closest('[data-filter]');
+      if (filterTarget) {
+        const filter = filterTarget.dataset.filter;
+        if (filter) filterP(filter);
+      }
+      // Cerrar carrito
+      if (e.target.closest('#cartClose')) toggleCart();
+      if (e.target.closest('#cartOverlay')) toggleCart();
+      // Abrir carrito
+      if (e.target.closest('#cartToggle')) toggleCart();
+    });
+
+    // Enlaces del footer
+    document.querySelectorAll('.f-col a[data-page]').forEach(a => {
+      a.addEventListener('click', function(e) {
+        e.preventDefault();
+        const page = this.dataset.page;
+        if (page) showPage(page);
+        if (this.dataset.filter) filterP(this.dataset.filter);
+      });
+    });
+
     // ================================================================
-    //  PRODUCTOS (datos actualizados con URLs correctas)
+    //  PRODUCTOS (con imágenes usando thumbnail)
     // ================================================================
     const productosData = [
-      { id:1, nombre:'Santander Natural', tipo:'grano', precio:0, descripcion:'Tueste medio, notas a chocolate y caramelo. Acidez brillante.', img:'https://drive.google.com/uc?export=view&id=1WpddbJpU7iJALrDwa4NX3DQz9uJlcY-H', badge:'best', badgeText:'Destacado' },
-      { id:2, nombre:'Santander Lavado', tipo:'grano', precio:0, descripcion:'Tueste oscuro, cuerpo robusto, frutos secos.', img:'https://drive.google.com/uc?export=view&id=1vLVn3dQBMG7HotrlA06ZHIe2W1aJiiDk', badge:'new', badgeText:'Nuevo' },
-      { id:3, nombre:'Santander Honey', tipo:'grano', precio:0, descripcion:'Notas cítricas y florales, acidez vibrante.', img:'https://drive.google.com/uc?export=view&id=1x2OtNBxB2f3y9VR4b8AUsAjSOWqxyvn2', badge:'', badgeText:'' },
-      { id:4, nombre:'Antioquia Lavado', tipo:'grano', precio:0, descripcion:'Perfil limpio y brillante, con notas frutales y un final dulce.', img:'https://drive.google.com/uc?export=view&id=1dsuWN0uf_j2uH4TsKBpP11oD0MSQRuGi', badge:'', badgeText:'' },
-      { id:5, nombre:'Pack Mayoreo Origen', tipo:'mayoreo', precio:0, descripcion:'Paquete de 1kg de café de origen, ideal para negocios.', img:'https://drive.google.com/uc?export=view&id=1QtQj4wO52Lm6f5icY3-5J2EDcXD1g306', badge:'', badgeText:'' },
+      { id:1, nombre:'Santander Natural', tipo:'grano', precio:0, descripcion:'Tueste medio, notas a chocolate y caramelo. Acidez brillante.', img:'https://drive.google.com/thumbnail?id=1WpddbJpU7iJALrDwa4NX3DQz9uJlcY-H&sz=w600', badge:'best', badgeText:'Destacado' },
+      { id:2, nombre:'Santander Lavado', tipo:'grano', precio:0, descripcion:'Tueste oscuro, cuerpo robusto, frutos secos.', img:'https://drive.google.com/thumbnail?id=1vLVn3dQBMG7HotrlA06ZHIe2W1aJiiDk&sz=w600', badge:'new', badgeText:'Nuevo' },
+      { id:3, nombre:'Santander Honey', tipo:'grano', precio:0, descripcion:'Notas cítricas y florales, acidez vibrante.', img:'https://drive.google.com/thumbnail?id=1x2OtNBxB2f3y9VR4b8AUsAjSOWqxyvn2&sz=w600', badge:'', badgeText:'' },
+      { id:4, nombre:'Antioquia Lavado', tipo:'grano', precio:0, descripcion:'Perfil limpio y brillante, con notas frutales y un final dulce.', img:'https://drive.google.com/thumbnail?id=1dsuWN0uf_j2uH4TsKBpP11oD0MSQRuGi&sz=w600', badge:'', badgeText:'' },
+      { id:5, nombre:'Pack Mayoreo Origen', tipo:'mayoreo', precio:0, descripcion:'Paquete de 1kg de café de origen, ideal para negocios.', img:'https://drive.google.com/thumbnail?id=1QtQj4wO52Lm6f5icY3-5J2EDcXD1g306&sz=w600', badge:'', badgeText:'' },
     ];
 
     function renderProductos(filtro = 'todos') {
@@ -1517,25 +1522,34 @@
             <div class="ptaste"><span class="tpill">☕ Tueste medio</span><span class="tpill">🇨🇴 Colombia</span></div>
             <div class="pfoot">
               <span class="pprice">Consultar</span>
-              <button class="btn-add" onclick="addToCart('${p.nombre}', 0, '${p.img}')">+ Cotizar</button>
+              <button class="btn-add" data-name="${p.nombre}" data-price="0" data-img="${p.img}">+ Cotizar</button>
             </div>
           </div>
         </div>
       `).join('');
+
+      // Asignar eventos a los botones "Cotizar"
+      grid.querySelectorAll('.btn-add').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          const name = this.dataset.name;
+          const price = parseFloat(this.dataset.price) || 0;
+          const img = this.dataset.img;
+          addToCart(name, price, img);
+        });
+      });
     }
 
     function filterP(tipo) {
       document.querySelectorAll('.f-tab').forEach(t => t.classList.remove('active'));
       document.querySelectorAll('.f-tab').forEach(t => {
-        if (t.textContent.trim().toLowerCase() === tipo || (tipo === 'todos' && t.textContent.trim() === 'Todos')) {
-          t.classList.add('active');
-        }
+        if (t.dataset.filter === tipo) t.classList.add('active');
       });
       renderProductos(tipo);
     }
 
     // ================================================================
-    //  CARRITO (con localStorage)
+    //  CARRITO
     // ================================================================
     let cart = [];
 
@@ -1605,12 +1619,12 @@
               <div class="ci-name">${item.name}</div>
               <div class="ci-price">${item.price > 0 ? '$'+item.price.toLocaleString() : 'Consultar'}</div>
               <div class="ci-qty">
-                <button class="qty-b" onclick="changeQty(${idx}, -1)">−</button>
+                <button class="qty-b" data-index="${idx}" data-delta="-1">−</button>
                 <span class="qty-n">${item.qty}</span>
-                <button class="qty-b" onclick="changeQty(${idx}, 1)">+</button>
+                <button class="qty-b" data-index="${idx}" data-delta="1">+</button>
               </div>
             </div>
-            <button class="ci-rm" onclick="removeFromCart(${idx})" aria-label="Eliminar producto">✕</button>
+            <button class="ci-rm" data-index="${idx}" aria-label="Eliminar producto">✕</button>
           </div>
         `;
       });
@@ -1619,6 +1633,21 @@
 
       const mensaje = cart.map(item => `${item.name} x${item.qty}`).join(', ');
       checkoutBtn.href = `https://wa.me/573018239526?text=Hola%20PAOS,%20quiero%20cotizar:%20${encodeURIComponent(mensaje)}`;
+
+      // Eventos para los botones dinámicos
+      itemsContainer.querySelectorAll('.qty-b').forEach(btn => {
+        btn.addEventListener('click', function() {
+          const idx = parseInt(this.dataset.index);
+          const delta = parseInt(this.dataset.delta);
+          changeQty(idx, delta);
+        });
+      });
+      itemsContainer.querySelectorAll('.ci-rm').forEach(btn => {
+        btn.addEventListener('click', function() {
+          const idx = parseInt(this.dataset.index);
+          removeFromCart(idx);
+        });
+      });
     }
 
     function toggleCart() {
