@@ -436,21 +436,34 @@
       from { opacity: 0; transform: translateX(36px); }
       to { opacity: 1; transform: translateX(0); }
     }
-    .hero-video-wrapper {
+    /* Contenedor del video con imagen de fondo */
+    .hero-video-container {
       position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-      overflow: hidden;
       border-radius: 6px;
+      overflow: hidden;
       box-shadow: 0 30px 80px rgba(0, 0, 0, .65);
+      background: var(--brown2);
     }
-    .hero-video-wrapper iframe {
+    .hero-video-container::before {
+      content: '';
       position: absolute;
-      top: 0;
-      left: 0;
+      inset: 0;
+      background: url('https://drive.google.com/thumbnail?id=1kshb6HF1MT7M-Yp6fTm8yz0Hw5X30l9L&sz=w800') center/cover no-repeat;
+      z-index: 0;
+      opacity: 0.6;
+      transition: opacity .8s ease;
+    }
+    .hero-video-container video {
+      position: relative;
+      z-index: 1;
       width: 100%;
-      height: 100%;
-      border: none;
+      display: block;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+    }
+    /* Cuando el video se carga, la imagen de fondo se desvanece */
+    .hero-video-container video.loaded + .hero-video-container::before {
+      opacity: 0;
     }
     .hero-img-frame {
       position: absolute;
@@ -1392,20 +1405,20 @@
         <div class="hero-img">
           <div class="hero-seal"><div class="seal-in"><div class="seal-n">100%</div><div class="seal-t">Colombiano<br>Puro</div></div></div>
           
-          <!-- VIDEO CON IFRAME (reproducción automática) -->
-          <div class="hero-video-wrapper">
-            <iframe 
-              src="https://drive.google.com/file/d/1kshb6HF1MT7M-Yp6fTm8yz0Hw5X30l9L/preview?autoplay=1" 
-              allow="autoplay; encrypted-media; fullscreen"
-              allowfullscreen>
-            </iframe>
+          <!-- Video con imagen de fondo mientras carga -->
+          <div class="hero-video-container">
+            <video 
+              autoplay 
+              muted 
+              loop 
+              playsinline 
+              poster="https://drive.google.com/thumbnail?id=1kshb6HF1MT7M-Yp6fTm8yz0Hw5X30l9L&sz=w800"
+              style="width:100%; display:block; aspect-ratio:16/9; object-fit:cover;"
+            >
+              <source src="https://drive.google.com/uc?export=download&id=1kshb6HF1MT7M-Yp6fTm8yz0Hw5X30l9L" type="video/mp4">
+              Tu navegador no soporta videos.
+            </video>
           </div>
-          
-          <!-- FALBACK: video nativo (oculto) por si el iframe no funciona -->
-          <video style="display:none;" autoplay muted loop playsinline poster="https://drive.google.com/thumbnail?id=1VLmEiSX_yTeFAZ9n0fnPRGVQy-caeMRq&sz=w800">
-            <source src="https://drive.google.com/uc?export=download&id=1kshb6HF1MT7M-Yp6fTm8yz0Hw5X30l9L" type="video/mp4">
-            Tu navegador no soporta videos.
-          </video>
           
           <div class="hero-img-frame"></div>
         </div>
